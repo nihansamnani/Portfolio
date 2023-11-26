@@ -64,10 +64,11 @@ html, body{
     justify-content: center;
     color: transparent;
     font-weight: 700;
-    /* cursor: none; */
+    cursor: none;
 }
-.circle p{
-    /* cursor: none; */
+.circle a{
+    text-decoration: none;
+    color: white;
 }
 /* .main{
     opacity: 0;
@@ -197,7 +198,8 @@ html, body{
     /* background-color: red; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 2rem;
 }
 .page2down a{
     background-color: rgb(8, 8, 8);
@@ -217,7 +219,6 @@ html, body{
     flex-direction: column;
     background-color: rgb(8, 8, 8);
     position: relative;
-    /* border: 2px solid red; */
 }
 /* .procircle{
     padding: 4rem;
@@ -274,10 +275,18 @@ html, body{
 .project2{
     border-top: 2rem solid white;
     /* border-bottom: 1rem solid white; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .project3{
     border-top: 2rem solid white;
     /* border-bottom: 1rem solid white; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .project1{
     border-top: 2rem solid #10a37f;
@@ -289,12 +298,23 @@ html, body{
 .p-box{
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(219, 96, 96);
     position: absolute;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
 }
 .p-box a{
-    
+    font-size: 10rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: red;
+    cursor: none;
+
 }
 .page4{
     padding: 3rem 3rem 0rem 3rem;
@@ -340,15 +360,24 @@ html, body{
     height: 1rem;
     fill: white;
 }
-.p4mid{
+.scrolls{
     font-size: 10rem;
     font-weight: 800;
     /* border: 2px solid red; */
     text-align: center;
-    width: 100%;
+    width: 200%;
 }
 .p4bottom{
     font-weight: 600;
+}
+.scroll{
+    padding: 3rem 3rem 2rem 3rem;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 600px){

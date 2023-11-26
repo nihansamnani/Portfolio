@@ -78,7 +78,7 @@ function heroAni(){
 }
 function proAni(){
     document.querySelector(".project1").addEventListener("mousemove", function(){
-        document.querySelector(".circle").innerHTML = `<a href="#">This</a>`
+        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
         gsap.to(".circle", {
             color: "white",
             backgroundColor: "black",
@@ -99,6 +99,8 @@ function proAni(){
     })
     
     document.querySelector(".project2").addEventListener("mousemove", function(){
+        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
+        document.querySelector(".circle a").style.color = "black"
         gsap.to(".circle", {
             color: "black",
             backgroundColor: "white",
@@ -107,6 +109,7 @@ function proAni(){
         })
     })
     document.querySelector(".project2").addEventListener("mouseleave", function(){
+        document.querySelector(".circle").textContent = ""
         gsap.to(".circle", {
             color: "transparent",
             backgroundColor: "white",
@@ -115,6 +118,7 @@ function proAni(){
         })
     })
     document.querySelector(".project3").addEventListener("mousemove", function(){
+        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
         gsap.to(".circle", {
             color: "white",
             backgroundColor: "black",
@@ -123,6 +127,7 @@ function proAni(){
         })
     })
     document.querySelector(".project3").addEventListener("mouseleave", function(){
+        document.querySelector(".circle").textContent = "";
         gsap.to(".circle", {
             color: "transparent",
             backgroundColor: "white",
@@ -133,12 +138,28 @@ function proAni(){
     
 }
 
-const d = new Date();
-const today = d.toString();
+function scroll(){
+    gsap.to(".scrolls", {
+        x:-200,
+        duration:10,
+        scrollTrigger: {
+            trigger: ".scrolls",
+            scroller: ".main",
+            markers: true,
+            start: "top 60%",
+            end: "top 30%",
+            scrub: 3,
+        }
+    })
+}
 
-document.querySelector(".hu-2").textContent = d;
+const d = new Date(DD-MM-YYYY);
+const today = d.toISOString();
+
+document.querySelector(".hu-2").textContent = today;
 
 loaderAni();
 circleFollow();
 proAni();
 heroAni();
+scroll();
