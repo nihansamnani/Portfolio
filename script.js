@@ -1,15 +1,41 @@
 
+gsap.registerPlugin(ScrollTrigger);
 
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('.main'),
-    smooth: true
+// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".main"),
+  smooth: true
+});
+// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+locoScroll.on("scroll", ScrollTrigger.update);
+
+// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+ScrollTrigger.scrollerProxy(".main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+  pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
 });
 
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+// const scroll = new LocomotiveScroll({
+//     el: document.querySelector('.main'),
+//     smooth: true
+// });
+
+const t1 = gsap.timeline();
 function loaderAni(){
-    const t1 = gsap.timeline();
     t1.to(".loader", {
-        delay:1,
-        duration: 3,
+        delay:.5,
+        duration: 1,
         scale: 50
         // backgroundColor: "blue"
     })
@@ -43,24 +69,16 @@ function circleFollow(){
 }
 function heroAni(){
     // const t1  = gsap.timeline();
-    gsap.from(".heroup", {
-        opacity: 0,
-        y: -100,
-        duration: 1,
-    })
-    gsap.from(".mainhead1 p", {
-        delay: 1,
-        x:800,
-        duration: 1
-    })
-    gsap.from(".mainhead2 p", {
-        delay: 1,
-        x:-800,
-        duration: 1
+    t1.from(".page1",{
+        // delay: 1,
+        // opacity: 0,
+        y:300,
+        duration: 2
     })
 }
 function proAni(){
     document.querySelector(".project1").addEventListener("mousemove", function(){
+        document.querySelector(".circle").innerHTML = `<a href="#">This</a>`
         gsap.to(".circle", {
             color: "white",
             backgroundColor: "black",
@@ -70,6 +88,7 @@ function proAni(){
        
     })
     document.querySelector(".project1").addEventListener("mouseleave", function(){
+        document.querySelector(".circle").textContent = ""
         gsap.to(".circle", {
             color: "transparent",
             backgroundColor: "white",
@@ -78,23 +97,7 @@ function proAni(){
         })
         
     })
-    document.querySelector(".project1").addEventListener("mousemove", function(){
-        
-        gsap.to(".p-box",{
-            height: "50%",
-            width: "50%",
-            duration: 1
-        })
-    })
-    document.querySelector(".project1").addEventListener("mouseleave", function(){
-        gsap.to(".project1 img", {
-            opacity: 1
-        })
-        gsap.to(".p-box",{
-            height: "0%",
-            width: "0%"
-        })
-    })
+    
     document.querySelector(".project2").addEventListener("mousemove", function(){
         gsap.to(".circle", {
             color: "black",
@@ -129,7 +132,13 @@ function proAni(){
     })
     
 }
+
+const d = new Date();
+const today = d.toString();
+
+document.querySelector(".hu-2").textContent = d;
+
 loaderAni();
-// circleFollow();
+circleFollow();
 proAni();
-// heroAni();
+heroAni();

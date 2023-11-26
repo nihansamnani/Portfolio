@@ -12,7 +12,17 @@ html, body{
     color: white;
     /* cursor: none; */
 }
-
+::selection{
+    background-color: #ffffff;
+    color: black;
+}
+.btn{
+    border: none;
+    padding: 1rem 2.8rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
 .loading{
     height: 100vh;
     width: 100%;
@@ -54,10 +64,10 @@ html, body{
     justify-content: center;
     color: transparent;
     font-weight: 700;
-    cursor: none;
+    /* cursor: none; */
 }
 .circle p{
-    cursor: none;
+    /* cursor: none; */
 }
 /* .main{
     opacity: 0;
@@ -132,45 +142,68 @@ html, body{
 .page1right a svg{
     height: 1.5rem;
     /* width: 100%; */
-    fill: white;
+    fill: rgb(255, 255, 255);
 }
 .page2{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    padding: 3rem 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    /* border: 2px solid red; */
 }
 .page2left{
+    overflow: hidden;
     /* background-color: red; */
-    width: 30%;
+    width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid yellow; */
     
 }
 .page2right{
     /* background-color: blue; */
-    width: 30%;
+    width: 50%;
+    height: 100%;
+    padding: 3rem 5rem;
     display: flex;
-    /* align-items: center; */
+    align-items: start;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 3rem;
+    /* border: 2px solid blue; */
+    /* text-align: center; */
 }
 .page2right p{
     /* width: 80%; */
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 .page2right a{
     text-decoration: none;
     color: rgb(224, 224, 224);
 }
 .page2left img{
-    height: 20rem;
-    width: 20rem;
-    border-radius: 50%;
+    /* height: 100%; */
+    width: 100%;
+    /* filter: grayscale(1) contrast(1.1); */
+    /* border-radius: 50%; */
+}
+.page2down{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.page2down a{
+    background-color: rgb(8, 8, 8);
+    padding: .5rem 1.2rem;
+    font-weight: 700;
+    border-radius: .1rem;
 }
 .page3{
     padding: 2rem 3rem;
@@ -180,12 +213,13 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 3rem;
     flex-direction: column;
     background-color: rgb(8, 8, 8);
     position: relative;
+    /* border: 2px solid red; */
 }
-.procircle{
+/* .procircle{
     padding: 4rem;
     height: 5rem;
     width: 5rem;
@@ -198,8 +232,8 @@ html, body{
     scale: 0;
     display: none;
     z-index: 999;
-}
-.procircle p{
+} */
+/* .procircle p{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,10 +244,11 @@ html, body{
 .procircle p svg{
     width: 1rem;
     fill: white;
-}
+} */
 .page3up{
     font-size: 3rem;
     font-weight: 700;
+    /* border: 2px solid blue; */
 }
 
 .projects{
@@ -221,13 +256,16 @@ html, body{
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 2rem;
-    flex-direction: column;
+    gap: 3rem;
+    flex-direction: row;
+    /* border: 2px solid green; */
+
 }
 
 .project{
     /* height: 40rem; */
-    width: 100%;
+    width: 48%;
+    /* border: 5px solid yellow; */
 }
 .project img{
     height: 100%;
@@ -249,11 +287,14 @@ html, body{
     justify-content: center;
 }
 .p-box{
-    width: 0%;
-    height: 0%;
+    width: 100%;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     position: absolute;
     z-index: 99;
+}
+.p-box a{
+    
 }
 .page4{
     padding: 3rem 3rem 0rem 3rem;
@@ -266,7 +307,7 @@ html, body{
 }
 .p4links{
     width: 100%;
-    height: 5rem;
+    height: 5rem;   
     /* background-color: grey; */
     display: flex;
     align-items: center;
@@ -302,6 +343,9 @@ html, body{
 .p4mid{
     font-size: 10rem;
     font-weight: 800;
+    /* border: 2px solid red; */
+    text-align: center;
+    width: 100%;
 }
 .p4bottom{
     font-weight: 600;
