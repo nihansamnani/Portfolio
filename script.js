@@ -1,4 +1,3 @@
-
 gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -32,6 +31,7 @@ ScrollTrigger.refresh();
 // });
 
 const t1 = gsap.timeline();
+
 function loaderAni(){
     t1.to(".loader", {
         delay:.5,
@@ -56,110 +56,199 @@ function loaderAni(){
         duration: 1
     })
 }
-
-function circleFollow(){
-    document.addEventListener("mousemove", function(dets){
-        gsap.to(".circle", {
-            scale: 1,
-            x: dets.x,
-            y: dets.y,
-            delay: 0
+function page1Ani(){
+    document.querySelector("#linkedin_link").addEventListener("mousemove", function(){
+        gsap.to("#linkedin_link svg", {
+            rotate: 45
         })
     })
+    document.querySelector("#linkedin_link").addEventListener("mouseleave", function(){
+        gsap.to("#linkedin_link svg", {
+            rotate: 0
+        })
+    })
+    document.querySelector("#github_link").addEventListener("mousemove", function(){
+        gsap.to("#github_link svg", {
+            rotate: 45
+        })
+    })
+    document.querySelector("#github_link").addEventListener("mouseleave", function(){
+        gsap.to("#github_link svg", {
+            rotate: 0
+        })
+    })
+    document.querySelector("#instagram_link").addEventListener("mousemove", function(){
+        gsap.to("#instagram_link svg", {
+            rotate: 45
+        })
+    })
+    document.querySelector("#instagram_link").addEventListener("mouseleave", function(){
+        gsap.to("#instagram_link svg", {
+            rotate: 0
+        })
+    })
+}
+function circleFollow(){
+    if (x.matches){
+        document.addEventListener("mousemove", function(dets){
+            gsap.to(".circle", {
+                scale: 1,
+                x: dets.x,
+                y: dets.y,
+                delay: 0
+            })
+        })
+    }
 }
 function heroAni(){
-    // const t1  = gsap.timeline();
-    t1.from(".page1",{
-        // delay: 1,
-        // opacity: 0,
-        y:300,
-        duration: 2
-    })
+    if (x.matches){
+        t1.from(".page1",{
+            y:300,
+            duration: 1
+        })
+    }
+    else{
+        t1.from(".page1",{
+            opacity: 0,
+            y:100,
+            duration: 1
+        })
+    }
 }
 function proAni(){
-    document.querySelector(".project1").addEventListener("mousemove", function(){
-        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
-        gsap.to(".circle", {
-            color: "white",
-            backgroundColor: "black",
-            height: "5rem",
-            width: "5rem"
+    if (x.matches){
+        document.querySelector(".project1").addEventListener("mousemove", function(){
+            document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
+            gsap.to(".circle", {
+                color: "white",
+                backgroundColor: "black",
+                height: "5rem",
+                width: "5rem"
+            })
+           
         })
-       
-    })
-    document.querySelector(".project1").addEventListener("mouseleave", function(){
-        document.querySelector(".circle").textContent = ""
-        gsap.to(".circle", {
-            color: "transparent",
-            backgroundColor: "white",
-            height: "1rem",
-            width: "1rem"
+        document.querySelector(".project1").addEventListener("mouseleave", function(){
+            document.querySelector(".circle").textContent = ""
+            gsap.to(".circle", {
+                color: "transparent",
+                backgroundColor: "white",
+                height: "1rem",
+                width: "1rem"
+            })
+            
         })
         
-    })
+        document.querySelector(".project2").addEventListener("mousemove", function(){
+            document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
+            document.querySelector(".circle a").style.color = "black"
+            gsap.to(".circle", {
+                color: "black",
+                backgroundColor: "white",
+                height: "5rem",
+                width: "5rem"
+            })
+        })
+        document.querySelector(".project2").addEventListener("mouseleave", function(){
+            document.querySelector(".circle").textContent = ""
+            gsap.to(".circle", {
+                color: "transparent",
+                backgroundColor: "white",
+                height: "1rem",
+                width: "1rem"
+            })
+        })
+        document.querySelector(".project3").addEventListener("mousemove", function(){
+            document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
+            gsap.to(".circle", {
+                color: "white",
+                backgroundColor: "black",
+                height: "5rem",
+                width: "5rem"
+            })
+        })
+        document.querySelector(".project3").addEventListener("mouseleave", function(){
+            document.querySelector(".circle").textContent = "";
+            gsap.to(".circle", {
+                color: "transparent",
+                backgroundColor: "white",
+                height: "1rem",
+                width: "1rem"
+            })
+        })
+        
+    }
+  
+}
+function scanAni(){
+    if(x.matches){
+        document.querySelector(".scannerhead svg").addEventListener("mousemove", function(){
+            gsap.to(".scannerhead svg", {
+                scale: 1.2,
+                duration: .5
+            })
+        })
+        document.querySelector(".scannerhead svg").addEventListener("mouseleave", function(){
+            gsap.to(".scannerhead svg", {
+                scale: 1,
+                duration: .5
     
-    document.querySelector(".project2").addEventListener("mousemove", function(){
-        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
-        document.querySelector(".circle a").style.color = "black"
-        gsap.to(".circle", {
-            color: "black",
-            backgroundColor: "white",
-            height: "5rem",
-            width: "5rem"
+            })
         })
-    })
-    document.querySelector(".project2").addEventListener("mouseleave", function(){
-        document.querySelector(".circle").textContent = ""
-        gsap.to(".circle", {
-            color: "transparent",
-            backgroundColor: "white",
-            height: "1rem",
-            width: "1rem"
+    }
+    else{
+        document.querySelector(".scannerhead2 svg").addEventListener("mousemove", function(){
+            gsap.to(".scannerhead2 svg", {
+                scale: 1.2,
+                duration: .5
+            })
         })
-    })
-    document.querySelector(".project3").addEventListener("mousemove", function(){
-        document.querySelector(".circle").innerHTML = `<a href="#">View</a>`
-        gsap.to(".circle", {
-            color: "white",
-            backgroundColor: "black",
-            height: "5rem",
-            width: "5rem"
+        document.querySelector(".scannerhead2 svg").addEventListener("mouseleave", function(){
+            gsap.to(".scannerhead2 svg", {
+                scale: 1,
+                duration: .5
+    
+            })
         })
-    })
-    document.querySelector(".project3").addEventListener("mouseleave", function(){
-        document.querySelector(".circle").textContent = "";
-        gsap.to(".circle", {
-            color: "transparent",
-            backgroundColor: "white",
-            height: "1rem",
-            width: "1rem"
-        })
-    })
+    }
+    
     
 }
-
 function scroll(){
-    gsap.to(".scrolls", {
-        x:-200,
-        duration:10,
-        scrollTrigger: {
-            trigger: ".scrolls",
-            scroller: ".main",
-            markers: true,
-            start: "top 60%",
-            end: "top 30%",
-            scrub: 3,
-        }
-    })
+    if(x.matches){
+        gsap.to(".scroll", {
+            x:-200,
+            duration:5,
+            scrollTrigger: {
+                trigger: ".scroll",
+                scroller: ".main",
+                start: "top 60%",
+                end: "top 30%",
+                scrub: 3,
+            }
+        })
+    }
+    else{
+        gsap.to(".scroll", {
+            x:-200,
+            duration:10,
+            scrollTrigger: {
+                trigger: ".scroll",
+                scroller: ".main",
+                start: "top 60%",
+                end: "top 30%",
+                scrub: 3,
+            }
+        })
+    }
+    
 }
 
-const d = new Date(DD-MM-YYYY);
-const today = d.toISOString();
-
-document.querySelector(".hu-2").textContent = today;
+var x = window.matchMedia("(min-width: 600px)")
 
 loaderAni();
 circleFollow();
+page1Ani();
 proAni();
 heroAni();
 scroll();
+scanAni();

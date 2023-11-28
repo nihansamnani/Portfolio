@@ -10,7 +10,6 @@ html, body{
     width: 100%;
     background-color: black;
     color: white;
-    /* cursor: none; */
 }
 ::selection{
     background-color: #ffffff;
@@ -137,9 +136,7 @@ html, body{
     gap: .2rem;
     /* letter-spacing: .1vw; */
 }
-.page1right a::after{
-    content: "";
-}
+
 .page1right a svg{
     height: 1.5rem;
     /* width: 100%; */
@@ -220,32 +217,7 @@ html, body{
     background-color: rgb(8, 8, 8);
     position: relative;
 }
-/* .procircle{
-    padding: 4rem;
-    height: 5rem;
-    width: 5rem;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    scale: 0;
-    display: none;
-    z-index: 999;
-} */
-/* .procircle p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-.procircle p svg{
-    width: 1rem;
-    fill: white;
-} */
+
 .page3up{
     font-size: 3rem;
     font-weight: 700;
@@ -324,6 +296,7 @@ html, body{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    
 }
 .p4links{
     width: 100%;
@@ -366,10 +339,36 @@ html, body{
     /* border: 2px solid red; */
     text-align: center;
     width: 200%;
+    overflow-x: hidden;
 }
 .p4bottom{
-    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    flex-direction: row;
+    font-size: 3rem;
 }
+.scannerhead2{
+    display: none;
+}
+.scannerhead{
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.scannerhead svg{
+    fill: black;
+    background-color: white;
+    width: 3rem;
+    padding: .4rem;
+    border-radius: 50%;
+}
+
 .scroll{
     padding: 3rem 3rem 2rem 3rem;
     height: fit-content;
@@ -379,183 +378,216 @@ html, body{
     justify-content: space-between;
     flex-direction: column;
 }
-
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media screen and (max-width: 600px){
+    .btn{
+        border: none;
+        padding:.81rem 2.4rem;
+        border-radius: 3rem;
+        font-weight: 700;
+        font-size: 1rem;
+        color: black;
+    }
+    .circle{
+        display: none;
+    }
     .hero{
-        width: 100%;
-        height: 80vh;
+        height: 60vh;
         padding: 0 1rem;
-        /* background-color: blue; */
+
     }
     .heroup{
-        padding: 2rem 0rem;
+        padding-top: 1rem;
     }
     .herodown{
         font-size: 4rem;
-        font-weight: 800;
         line-height: 3.5rem;
     }
     .page1{
-        height: 20vh;
-        width: 100%;
-        padding: 1rem 1rem;
-        padding-bottom: 4rem;
-        background-color: rgb(8, 8, 8);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 2rem 1rem;
+        height: fit-content;
         flex-direction: column;
-        gap: 1rem;
-        /* background-color: red; */
-    }
-    .page1left{
-        font-size: 1rem;
-        color: white;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-    .page1right{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1rem;
-        gap: 0rem;
-    }
-    .page1right a {
-        color: white;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
         justify-content: center;
-        font-weight: 600;
-    }
-   
-    .page1right a svg{
-        height: 1.5rem;
-        fill: white;
+        gap: 1rem;
     }
     .page2{
-        min-height: 100vh;
-        width: 100%;
-        padding: 5rem 1rem;
-        /* padding-top: 6rem; */
         flex-direction: column;
+        padding: 3rem 1rem;
         gap: 3rem;
-        /* background-color: blue; */
     }
     .page2left{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
-    .page2right{
-        width: 100%;
-        
-    }
-    .page2left img{
-        height: 15rem;
-        width: 15rem;
-        border-radius: 50%;
-    }
-    .page3{
-        padding: 5rem 1rem;
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        /* background-color: red; */
-    }
-    .page3up{
-        font-size: 3rem;
-        font-weight: 700;
-    }
-    .projects{
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        gap: 2rem;
-        flex-direction: column;
-    }
-    .project{
-        height: 18rem;
-        width: 32rem;
-        background-color: white;
-    }
-    .project img{
+        /* background-color: yellow; */
         height: 100%;
         width: 100%;
     }
-    .project1{
-        border-top: 2rem solid white;
-        /* border-bottom: 1rem solid white; */
+    .page2left img{
+        width: 120%;
+        /* height: 100%; */
+        /* scale: 1.4; */
+
     }
-    .project3{
-        border-top: 2rem solid white;
-        /* border-bottom: 1rem solid white; */
+    .page2right{
+        padding: 0 1rem;
+        width: 100%;
+        gap: 2rem;
+        /* background-color: red; */
     }
-    .project2{
-        border-top: 2rem solid #10a37f;
+    .page2down{
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        /* gap: 2rem; */
+        /* flex-direction: column; */
+        flex-wrap: wrap;
     }
-    .page4{
-        padding: 1rem 1rem 0 1rem;
-        height: 60vh;
+    .page2down a{
+        background-color: rgb(43, 43, 43);
+        padding: .5rem 1.2rem;
+        font-weight: 700;
+        border-radius: .1rem;
+    }
+    .page3{
+        padding: 2rem 1rem;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        flex-direction: column;
+        /* background-color: rgb(8, 8, 8); */
+        /* background-color: red; */
+        position: relative;
+    }
+    .projects{
+        width: 100%;
+        height: fit-content;
+    
+    }
+    .project{
+        width: 100%;
+    }
+    
+    .project2{
+        border-top: 1rem solid white;
+    }
+    .project3{
+        border-top: 1rem solid white;
+    }
+    .project1{
+        border-top: 1rem solid #10a37f;
+    }
+    .p-box{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.192);
+        position: absolute;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        color: white;
+    
+    }
+    .p-box a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1rem;
+        padding: 2rem;
+        width: 10%;
+        height: 10%;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+    }
+    .scroll{
+        padding: 3rem 3rem 2rem 3rem;
+        /* height: fit-content; */
+        width: 200%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
         /* background-color: red; */
     }
-    .p4links{
-        width: 100%;
+    .scrolls{
+        font-size: 3rem;        
+        overflow-x: hidden;
+    }
+    .page4{
+        padding: 3rem 1rem;
         height: fit-content;
-        /* background-color: green; */
-        /* background-color: grey; */
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
-        gap: 1rem;
-        border-bottom: 1px solid white;
+        gap: 3rem;
+        /* background-color: red; */
+        
     }
-    .p4l-1 a{
-        text-decoration: none;
-        color: white; 
-        font-size: 2rem;
-        font-weight: 700;
+    .p4links{
+        width: 100%;
+        height: fit-content;   
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+        flex-direction: column;
+        gap: 1rem;
     }
     .p4l-2{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        font-weight: 500;
+        /* background-color: red; */
+        width: 100%;
+        justify-content: space-between;
+        padding-bottom: .8rem;
     }
-    .p4l-2 a{
-        text-decoration: none;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: .3rem;
+    .p41-2 a{
+        width: fit-content;
+        height: fit-content;
     }
     .p4l-2 a svg{
-        width: 1rem;
-        height: 1rem;
-        fill: white;
-    }
-    .p4mid{
-        font-size: 3rem;
-        font-weight: 800;
+        height: 1.5rem;
     }
     .p4bottom{
-        font-weight: 600;
+        padding: 3rem 1rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+    .scanning{
+        display: none;
+    }
+    .scannerhead2{
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .scannerhead2 svg{
+        fill: black;
+        background-color: white;
+        width: 3rem;
+        padding: .4rem;
+        border-radius: 50%;
+    }
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
