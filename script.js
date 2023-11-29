@@ -32,31 +32,24 @@ ScrollTrigger.refresh();
 
 const t1 = gsap.timeline();
 
-function loaderAni(){
-    t1.to(".loader", {
-        delay:.5,
-        duration: 1,
-        scale: 50
-        // backgroundColor: "blue"
-    })
-    
-    t1.to(".loading", {
+function navAni(){
+    t1.from(".heroup", {
+        y: -50,
         opacity: 0,
-        duration: -3,
-    })
-    t1.to(".loading", {
-        // duration: .8,
-        display: "none"
-
-    })
-    t1.from(".main", {
-        y: 600,
-        display: "none",
-        opacity: 0,
-        duration: 1
+        // duration: 2
     })
 }
 function page1Ani(){
+    document.querySelector(".mainhead1").style.overflow = "hidden";
+    document.querySelector(".mainhead2").style.overflow = "hidden";
+    t1.from(".mainhead1 p", {
+        y:-200,
+        // duration: 5
+    })
+    t1.from(".mainhead2 p", {
+        y:200,
+        // duration: 5
+    })
     document.querySelector("#linkedin_link").addEventListener("mousemove", function(){
         gsap.to("#linkedin_link svg", {
             rotate: 45
@@ -87,6 +80,35 @@ function page1Ani(){
             rotate: 0
         })
     })
+}
+function page3Ani(){
+    if(x.matches){
+        gsap.from(".project1", {
+            x: -200,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".project1",
+                scroller: ".main",
+                start: "top 60%",
+                end: "top 30%",
+                markers: true,
+                // scrub: 3,
+            }
+        })
+        gsap.from(".project2", {
+            x: 200,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".project2",
+                scroller: ".main",
+                start: "top 60%",
+                end: "top 30%",
+                markers: true,
+                // scrub: 3,
+            }
+        })
+    }
+    
 }
 function circleFollow(){
     if (x.matches){
@@ -245,9 +267,11 @@ function scroll(){
 
 var x = window.matchMedia("(min-width: 600px)")
 
-loaderAni();
+// loaderAni();
+navAni();
 circleFollow();
 page1Ani();
+page3Ani();
 proAni();
 heroAni();
 scroll();
