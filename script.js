@@ -111,7 +111,7 @@ function page3Ani() {
         scroller: ".main",
         start: "top 60%",
         end: "top 30%",
-        markers: true,
+        // markers: true,
         // scrub: 3,
       },
     });
@@ -123,7 +123,7 @@ function page3Ani() {
         scroller: ".main",
         start: "top 60%",
         end: "top 30%",
-        markers: true,
+        // markers: true,
         // scrub: 3,
       },
     });
